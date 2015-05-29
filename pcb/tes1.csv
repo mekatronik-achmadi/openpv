@@ -1,0 +1,13 @@
+Qty,Value,Device,Package,Code,URL,Satuan,Total
+8,Yellow,LEDCHIP-LED0805,CHIP-LED0805,LED0302002,http://sfe-electronics.com/id/display/1385-smd0805-yellow-led.html,500,4000
+4,100n,C-EUC0805,C0805,C010203032,http://sfe-electronics.com/id/capacitor/129-100nf-smd0805-capacitor.html,75,300
+2,1k5,R-EU_R0805,R0805,R010203023,http://sfe-electronics.com/id/resistor/624-15k-ohm-smd0805-resistor.html,50,100
+4,22pf,C-EUC0805,C0805,C010203009,http://sfe-electronics.com/id/capacitor/107-22pf-smd0805-capacitor.html,75,300
+6,30ohm,R-EU_R0805,R0805,R010203008,http://sfe-electronics.com/id/resistor/609-22-ohm-smd0805-resistor.html,50,300
+2,3v3,ZENER-DIODESMB,SMB,DZ02003,http://sfe-electronics.com/id/diode/876-33v-smd1206-zener-diode.html,200,400
+10,4k7ohm,R-EU_R0805,R0805,R010203028,http://sfe-electronics.com/id/resistor/629-47k-ohm-smd0805-resistor.html,50,500
+6,BC817-40SMD,BC817-40SMD,SOT23-BEC,TRGP02006,http://sfe-electronics.com/id/transistor/1254-bc817-transistor-sot-23.html,450,2700
+2,STM32F10XCXT6,STM32F10XCXT6,TQFP48,ICMC020102004,http://sfe-electronics.com/id/microcontroller-ic/2488-stm32f100c4t6b.html,30000,60000
+,,,,,,,
+,Perkiraan ,,,,,,68600
+,Pembulatan,,,,,,100000

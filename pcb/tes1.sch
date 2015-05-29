@@ -9770,8 +9770,8 @@ Source: 008-0260-0_E.pdf</description>
 <part name="BATT2" library="con-ptr500" deviceset="AK300/2" device=""/>
 <part name="BATT3" library="con-ptr500" deviceset="AK300/2" device=""/>
 <part name="BATT4" library="con-ptr500" deviceset="AK300/2" device=""/>
-<part name="RVA" library="resistor" deviceset="R-EU_" device="R0805"/>
-<part name="RVB" library="resistor" deviceset="R-EU_" device="R0805"/>
+<part name="RVA" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="RVB" library="resistor" deviceset="R-EU_" device="R0805" value="1k5"/>
 <part name="CV" library="resistor" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="PV" library="con-jack" deviceset="JACK-PLUG" device="0"/>
 <part name="D1" library="diode" deviceset="ZENER-DIODE" device="SMB" value="3v3"/>
@@ -10021,6 +10021,11 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="129.54" y1="7.62" x2="129.54" y2="2.54" width="0.1524" layer="91"/>
 <label x="129.54" y="5.08" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="S1" gate="1" pin="P"/>
+<wire x1="-7.62" y1="35.56" x2="-10.16" y2="35.56" width="0.1524" layer="91"/>
+<label x="-10.16" y="35.56" size="1.778" layer="95" rot="R180"/>
+</segment>
 </net>
 <net name="V2" class="0">
 <segment>
@@ -10250,13 +10255,6 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="BOOT" gate="A" pin="2"/>
 <wire x1="111.76" y1="-33.02" x2="116.84" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="-33.02" x2="116.84" y2="-40.64" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="S1" gate="1" pin="P"/>
-<wire x1="-7.62" y1="35.56" x2="-10.16" y2="35.56" width="0.1524" layer="91"/>
-<label x="-10.16" y="35.56" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="SW" class="0">
