@@ -174,65 +174,69 @@ int main(void) {
   halInit();
   chSysInit();
 
-#if USE_INTERFACE
-  Thread *shelltp = NULL;
-  palSetPadMode(GPIOA,9,PAL_MODE_STM32_ALTERNATE_PUSHPULL);
-  palSetPadMode(GPIOA,10,PAL_MODE_INPUT);
-  sdStart(&SD1, NULL);
-  shellInit();
-#endif
+//#if USE_INTERFACE
+//  Thread *shelltp = NULL;
+//  palSetPadMode(GPIOA,9,PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+//  palSetPadMode(GPIOA,10,PAL_MODE_INPUT);
+//  sdStart(&SD1, NULL);
+//  shellInit();
+//#endif
 
-  palSetPadMode(PORT_LED,LED1,PAL_MODE_OUTPUT_PUSHPULL);
-  palSetPadMode(PORT_LED,LED2,PAL_MODE_OUTPUT_PUSHPULL);
-  palSetPadMode(PORT_LED,LED3,PAL_MODE_OUTPUT_PUSHPULL);
-  palSetPadMode(PORT_LED,LED4,PAL_MODE_OUTPUT_PUSHPULL);
-  palClearPad(PORT_LED,LED1);
-  palClearPad(PORT_LED,LED2);
-  palClearPad(PORT_LED,LED3);
-  palClearPad(PORT_LED,LED4);
+//  palSetPadMode(PORT_LED,LED1,PAL_MODE_OUTPUT_PUSHPULL);
+//  palSetPadMode(PORT_LED,LED2,PAL_MODE_OUTPUT_PUSHPULL);
+//  palSetPadMode(PORT_LED,LED3,PAL_MODE_OUTPUT_PUSHPULL);
+//  palSetPadMode(PORT_LED,LED4,PAL_MODE_OUTPUT_PUSHPULL);
+//  palClearPad(PORT_LED,LED1);
+//  palClearPad(PORT_LED,LED2);
+//  palClearPad(PORT_LED,LED3);
+//  palClearPad(PORT_LED,LED4);
 
-  palSetPadMode(PORT_CON,CON_PV,PAL_MODE_OUTPUT_PUSHPULL);
+//  palSetPadMode(PORT_CON,CON_PV,PAL_MODE_OUTPUT_PUSHPULL);
   palSetPadMode(PORT_CON,CON_LAMP,PAL_MODE_OUTPUT_PUSHPULL);
   palSetPadMode(PORT_CON,CON_USB,PAL_MODE_OUTPUT_PUSHPULL);
   palClearPad(PORT_CON,CON_PV);
   palClearPad(PORT_CON,CON_LAMP);
   palClearPad(PORT_CON,CON_USB);
 
-  palSetPadMode(PORT_SW,SW,PAL_MODE_INPUT_PULLUP);
+//  palSetPad(PORT_CON,CON_PV);
+  palSetPad(PORT_CON,CON_LAMP);
+  while(1);
 
-  palSetPadMode(GPIOA,0,PAL_MODE_INPUT_ANALOG);
-  adcStart(&ADCD1, NULL);
-  chThdCreateStatic(wa_adcThread, sizeof(wa_adcThread), NORMALPRIO, adcThread, NULL);
+//  palSetPadMode(PORT_SW,SW,PAL_MODE_INPUT_PULLUP);
 
-  while (TRUE) {
-    batt_level();
+//  palSetPadMode(GPIOA,0,PAL_MODE_INPUT_ANALOG);
+//  adcStart(&ADCD1, NULL);
+//  chThdCreateStatic(wa_adcThread, sizeof(wa_adcThread), NORMALPRIO, adcThread, NULL);
 
-#if USE_INTERFACE
-    if (!shelltp){
-      shelltp = shellCreate(&shell_cfg1, SHELL_WA_SIZE, NORMALPRIO);}
-    else if (chThdTerminated(shelltp)) {
-      chThdRelease(shelltp);
-      shelltp = NULL;
-    }
-#endif
+//  while (TRUE) {
+//    batt_level();
 
-    if(palReadPad(PORT_SW,SW)==PAL_LOW){
-        led_on=1;
-        led_loop=0;
-    }
+//#if USE_INTERFACE
+//    if (!shelltp){
+//      shelltp = shellCreate(&shell_cfg1, SHELL_WA_SIZE, NORMALPRIO);}
+//    else if (chThdTerminated(shelltp)) {
+//      chThdRelease(shelltp);
+//      shelltp = NULL;
+//    }
+//#endif
 
-    if(led_on==1){
-        led_loop++;
-        if(led_loop==10){
-            led_on=0;
-            led_loop=0;
-            palClearPad(PORT_LED,LED1);
-            palClearPad(PORT_LED,LED2);
-            palClearPad(PORT_LED,LED3);
-            palClearPad(PORT_LED,LED4);
-        }
-    }
+//    if(palReadPad(PORT_SW,SW)==PAL_LOW){
+//        led_on=1;
+//        led_loop=0;
+//    }
 
-    chThdSleepMilliseconds(500);
-  }
+//    if(led_on==1){
+//        led_loop++;
+//        if(led_loop==10){
+//            led_on=0;
+//            led_loop=0;
+//            palClearPad(PORT_LED,LED1);
+//            palClearPad(PORT_LED,LED2);
+//            palClearPad(PORT_LED,LED3);
+//            palClearPad(PORT_LED,LED4);
+//        }
+//    }
+
+//    chThdSleepMilliseconds(500);
+//  }
 }
