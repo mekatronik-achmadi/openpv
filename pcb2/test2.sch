@@ -18665,18 +18665,18 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <part name="L-USB" library="resistor" deviceset="L-EU" device="WE-TPC" value="33uH"/>
 <part name="C-USB2" library="resistor" deviceset="CPOL-EU" device="E2.5-5" value="220uF"/>
 <part name="IC1" library="linear" deviceset="LMV358?*" device="M"/>
-<part name="R-ADCPV2" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCPV1" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCPV3" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="R-ADCPV2" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
+<part name="R-ADCPV1" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
+<part name="R-ADCPV3" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
 <part name="D-PV1" library="diode" deviceset="DIODE-" device="DO-214AC"/>
 <part name="IC2" library="linear" deviceset="LMV358?*" device="M"/>
-<part name="R-ADCLAMP2" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCLAMP1" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCLAMP3" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="R-ADCLAMP2" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
+<part name="R-ADCLAMP1" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
+<part name="R-ADCLAMP3" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
 <part name="D-LAMP1" library="diode" deviceset="DIODE-" device="DO-214AC"/>
-<part name="R-ADCUSB1" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCUSB2" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCUSB3" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="R-ADCUSB1" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
+<part name="R-ADCUSB2" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
+<part name="R-ADCUSB3" library="resistor" deviceset="R-EU_" device="R0805" value="100k"/>
 <part name="D-USB1" library="diode" deviceset="DIODE-" device="DO-214AC"/>
 <part name="LED1" library="led" deviceset="LED" device="CHIP-LED0805"/>
 <part name="LED2" library="led" deviceset="LED" device="CHIP-LED0805"/>
@@ -18685,15 +18685,15 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <part name="LED5" library="led" deviceset="LED" device="CHIP-LED0805"/>
 <part name="LED6" library="led" deviceset="LED" device="CHIP-LED0805"/>
 <part name="R-ADCBATT1" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="R-ADCBATT2" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
-<part name="C-ADCBATT" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="R-ADCBATT2" library="resistor" deviceset="R-EU_" device="R0805" value="1k5"/>
+<part name="C-ADCBATT" library="resistor" deviceset="C-EU" device="C0805" value="100nf"/>
 <part name="S-NRST" library="switch" deviceset="SKHMP*E010" device="" technology="S"/>
 <part name="R-NRST" library="resistor" deviceset="R-EU_" device="R0805" value="4k7"/>
 <part name="IC3" library="stm32" deviceset="STM32F10XCXT6" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="Q1" library="crystal" deviceset="CRYSTAL" device="HC49S" value="8mhz"/>
-<part name="C-CLK1" library="resistor" deviceset="C-EU" device="C0805"/>
-<part name="C-CLK2" library="resistor" deviceset="C-EU" device="C0805"/>
+<part name="C-CLK1" library="resistor" deviceset="C-EU" device="C0805" value="22pf"/>
+<part name="C-CLK2" library="resistor" deviceset="C-EU" device="C0805" value="22pf"/>
 <part name="FLASH" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="X1" library="con-berg" deviceset="PN87520" device=""/>
 <part name="J1" library="con-jack" deviceset="JACK-PLUG" device="0"/>
