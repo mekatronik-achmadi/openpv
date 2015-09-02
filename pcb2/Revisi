@@ -1,0 +1,13 @@
+1. Ada jumper terlalu dekat ke chip CPU
+2. Kurang diode zener (harus ada)
+3. kurang diode untuk vdd  (harus ada)
+4. induktor ganti ke non-smd
+5. ada jumper terlalu dekat kaki elco
+6. Low Current Sensing
+	6.1 Op-Amp salah paket (gagal)
+	6.2 Langsung selisih ADC
+	6.3 Resistor low side 100 ohm (gagal)
+	6.4 Ganti berbasis Hall MLX91206
+	6.5 Ganti berbasis Hall ACS712 5A
+	6.6 Remove (plus LED_IN dan LED_OUT)
+7. Algoritma Charge-Discharge
