@@ -55,6 +55,10 @@ void view_level(void){
         batt_level();
         chThdSleepMilliseconds(500);
     }
+    palClearPad(GPIOA,LED_1);
+    palClearPad(GPIOB,LED_2);
+    palClearPad(GPIOB,LED_3);
+    palClearPad(GPIOB,LED_4);
 }
 
 void batt_control(void){

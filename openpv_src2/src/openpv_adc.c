@@ -41,10 +41,13 @@ static msg_t adcThread(void *arg) {
   while (TRUE) {
     chThdSleepMilliseconds(100);
     adcStartConversion(&ADCD1, &adcgrpcfg, samples, ADC_GRP1_BUF_DEPTH);
+//    chprintf((BaseSequentialStream *)&SD1, "adc0 = %i \n\r",adc0);
   }
   return 0;
 }
 
 void ADC_Init(void){
+    palSetPadMode(GPIOA,0,PAL_MODE_INPUT_ANALOG);
+    adcStart(&ADCD1, NULL);
     chThdCreateStatic(wa_adcThread, sizeof(wa_adcThread), NORMALPRIO, adcThread, NULL);
 }

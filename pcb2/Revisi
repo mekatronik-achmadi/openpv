@@ -11,3 +11,5 @@
 	6.5 Ganti berbasis Hall ACS712 5A
 	6.6 Remove (plus LED_IN dan LED_OUT)
 7. Algoritma Charge-Discharge
+8. PV Buck diganti adjustable (V-In 14v s/d 15v)
+9. Pengujian lebih jauh
