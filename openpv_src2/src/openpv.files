@@ -1,5 +1,6 @@
 halconf.h
 main.c
+<<<<<<< HEAD
 mcuconf.h
 openpv_adc.h
 openpv_adc.c
@@ -10,3 +11,6 @@ openpv_uart.h
 openpv_uart.c
 openpv_batt.h
 openpv_batt.c
+=======
+mcuconf.h
+>>>>>>> a7350e949f2a0148ba682692b575a64c2bc18df6

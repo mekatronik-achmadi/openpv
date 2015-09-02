@@ -80,7 +80,11 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/chprintf.c \
        $(CHIBIOS)/os/various/memstreams.c \
        $(CHIBIOS)/os/various/shell.c \
+<<<<<<< HEAD
        main.c openpv_adc.c openpv_gpio.c openpv_uart.c openpv_batt.c
+=======
+       main.c
+>>>>>>> a7350e949f2a0148ba682692b575a64c2bc18df6
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
