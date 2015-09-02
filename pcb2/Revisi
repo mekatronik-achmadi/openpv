@@ -9,10 +9,7 @@
 	6.3 Resistor low side 100 ohm (gagal)
 	6.4 Ganti berbasis Hall MLX91206
 	6.5 Ganti berbasis Hall ACS712 5A
-	6.6 Remove (plus LED_IN dan LED_OUT)
-<<<<<<< HEAD
+	6.6 Remove (also LED_IN dan LED_OUT)
 7. Algoritma Charge-Discharge
 8. PV Buck diganti adjustable (V-In 14v s/d 15v)
 9. Pengujian lebih jauh
-=======
->>>>>>> a7350e949f2a0148ba682692b575a64c2bc18df6
