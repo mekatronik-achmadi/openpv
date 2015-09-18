@@ -3,19 +3,34 @@
 extern adcsample_t adc0;
 
 #if USE_INTERFACE
-static void cmd_data(BaseSequentialStream *chp, int argc, char *argv[]) {
+static void cmd_data_adc(BaseSequentialStream *chp, int argc, char *argv[]) {
 
   (void)argv;
   if (argc > 0) {
-    chprintf(chp, "Usage: data\r\n");
+    chprintf(chp, "Usage: adc\r\n");
     return;
   }
 
-  chprintf(chp, "adc0 = %i \n\r",adc0);
+  //chprintf(chp, "adc0 = %i \n\r",adc0);
+  chprintf(chp, "%i\n\r",adc0);
+}
+
+static void cmd_data_volt(BaseSequentialStream *chp, int argc, char *argv[]) {
+
+  (void)argv;
+  if (argc > 0) {
+    chprintf(chp, "Usage: volt\r\n");
+    return;
+  }
+
+  float volt = (float) adc0 * 0.0008;
+
+  chprintf(chp, "volt = %f \n\r",volt);
 }
 
 static const ShellCommand commands[] = {
-  {"data", cmd_data},
+  {"adc", cmd_data_adc},
+  {"volt", cmd_data_volt},
   {NULL, NULL}
 };
 
