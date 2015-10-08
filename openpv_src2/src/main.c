@@ -30,5 +30,9 @@ int main(void) {
     while(1){
         Shell_Init();
         batt_control();
+        chThdSleepSeconds(60);
+
+//        palTogglePad(GPIOA,CON_LAMP);
+//        chThdSleepMilliseconds(500);
     }
 }

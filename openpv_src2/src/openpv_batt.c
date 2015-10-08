@@ -8,6 +8,7 @@ extern adcsample_t adc0;
 #define VL4 4000
 
 void batt_level(void){
+    palSetPad(GPIOA,CON_PV);
     if((adc0>0 && adc0<=VL1) || (adc0==0)){
 
         palTogglePad(GPIOA,LED_1);
@@ -78,6 +79,7 @@ void view_level(void){
 }
 
 void batt_control(void){
+    palSetPad(GPIOA,CON_PV);
     if((adc0>0 && adc0<=VL1) || (adc0==0)){
 
         palClearPad(GPIOA,CON_PV);

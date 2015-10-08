@@ -28,9 +28,41 @@ static void cmd_data_volt(BaseSequentialStream *chp, int argc, char *argv[]) {
   chprintf(chp, "volt = %f \n\r",volt);
 }
 
+static void cmd_led_on(BaseSequentialStream *chp, int argc, char *argv[]) {
+    (void)argc;
+    (void)argv;
+    (void)chp;
+        palClearPad(GPIOA,CON_LAMP);
+}
+
+static void cmd_led_off(BaseSequentialStream *chp, int argc, char *argv[]) {
+    (void)argc;
+    (void)argv;
+    (void)chp;
+        palSetPad(GPIOA,CON_LAMP);
+}
+
+static void cmd_usb_on(BaseSequentialStream *chp, int argc, char *argv[]) {
+    (void)argc;
+    (void)argv;
+    (void)chp;
+        palClearPad(GPIOA,CON_USB);
+}
+
+static void cmd_usb_off(BaseSequentialStream *chp, int argc, char *argv[]) {
+    (void)argc;
+    (void)argv;
+    (void)chp;
+        palSetPad(GPIOA,CON_USB);
+}
+
 static const ShellCommand commands[] = {
   {"adc", cmd_data_adc},
   {"volt", cmd_data_volt},
+  {"ledon", cmd_led_on},
+  {"ledoff", cmd_led_off},
+  {"usbon", cmd_usb_on},
+  {"usboff", cmd_usb_off},
   {NULL, NULL}
 };
 
