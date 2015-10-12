@@ -19,3 +19,19 @@ void GPIO_Init(void){
     palSetPad(GPIOA,CON_LAMP);
     palSetPad(GPIOA,CON_USB);
 }
+
+void Test_Led_Loop(void){
+    while(1){
+        palTogglePad(GPIOB,LED_4);
+        palTogglePad(GPIOB,LED_3);
+        palTogglePad(GPIOB,LED_2);
+        palTogglePad(GPIOA,LED_1);
+        chThdSleepMilliseconds(500);
+    }
+}
+
+void Test_Cut_All(void){
+        palSetPad(GPIOA,CON_PV);
+        palSetPad(GPIOA,CON_LAMP);
+        palSetPad(GPIOA,CON_USB);
+}

@@ -13,5 +13,7 @@
 #define CON_USB 6 //A
 
 void GPIO_Init(void);
+void Test_Led_Loop(void);
+void Test_Cut_All(void);
 
 #endif // OPENPV_GPIO_H

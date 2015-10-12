@@ -16,6 +16,9 @@
 
 #include "inklusi.h"
 
+#define TEST_SYSTEM 0
+#define SERIAL_COMM 0
+
 int main(void) {
 
     halInit();
@@ -23,16 +26,25 @@ int main(void) {
 
     GPIO_Init();
     ADC_Init();
+
+#if SERIAL_COMM
     UART_Init();
+#endif
+
+#if TEST_SYSTEM
+    Test_Cut_All();
+    Test_Led_Loop();
+#endif
 
     view_level();
 
     while(1){
+
+#if SERIAL_COMM
         Shell_Init();
+#endif
+
         batt_control();
         chThdSleepSeconds(60);
-
-//        palTogglePad(GPIOA,CON_LAMP);
-//        chThdSleepMilliseconds(500);
     }
 }
