@@ -2,6 +2,7 @@
 
 extern adcsample_t adc0;
 
+//cek ulang
 #define VL1 3412 // 11 Volt
 #define VL2 3582
 #define VL3 3752
