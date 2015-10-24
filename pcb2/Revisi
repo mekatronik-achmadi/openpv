@@ -13,4 +13,7 @@
 7. Algoritma Charge-Discharge
 8. PV Buck diganti adjustable (V-In 14v s/d 15v)
 9. ADC per titik bateray
-10. Pengujian lebih jauh
+10. Contact Detector untuk USB dan Lampu
+10. Pembatas Arus untuk chip STM32
+11. Diode Buck PV to Baterai
+12. Adj PV Buck Max (Feedback to GND)
