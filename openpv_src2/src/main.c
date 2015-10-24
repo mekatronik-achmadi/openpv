@@ -17,7 +17,7 @@
 #include "inklusi.h"
 
 #define TEST_SYSTEM 0
-#define SERIAL_COMM 0
+#define SERIAL_COMM 1
 
 int main(void) {
 
