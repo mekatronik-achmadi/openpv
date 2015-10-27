@@ -14,6 +14,10 @@
 8. PV Buck diganti adjustable (V-In 14v s/d 15v)
 9. ADC per titik bateray
 10. Contact Detector untuk USB dan Lampu
-10. Pembatas Arus untuk chip STM32
-11. Diode Buck PV to Baterai
+10. low power Regulator 5v dan STM32 diganti ATMega8
+11. Diode Buck PV to Baterai, Buck VCC to USB, Buck Lamp to LED
 12. Adj PV Buck Max (Feedback to GND)
+13. VDD jumper untuk Blind Charging safety
+14. PV normal connect, VCC & LAMP normal diconnect
+15. Tersedia 2 pilihan tombol Reset atau I/O
+16. Flexibilitas jumlah seri bateray (max 4 soket)
