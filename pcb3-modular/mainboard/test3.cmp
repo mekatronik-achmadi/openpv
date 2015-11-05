@@ -1,0 +1,507 @@
+Cmp-Mod V01 Created by PcbNew   date = Wed 04 Nov 2015 10:48:40 PM WIB
+
+BeginCmp
+TimeStamp = 56377662
+Path = /5636CF71
+Reference = D-ADC-LAMP1;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 5636E451
+Path = 
+Reference = REF**;
+ValeurCmp = Symbol_ESD-Logo_CopperTop;
+IdModule  = Symbols:Symbol_ESD-Logo_CopperTop;
+EndCmp
+
+BeginCmp
+TimeStamp = 56360D83
+Path = /56369EFC
+Reference = R-BATT1;
+ValeurCmp = R;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 56360D89
+Path = /56369FAD
+Reference = R-BATT2;
+ValeurCmp = R;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 56360D7D
+Path = /5636A0BC
+Reference = C-BATT1;
+ValeurCmp = C;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E0CB1
+Path = /562F0A0D
+Reference = C-RegA2;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFED0
+Path = /562E8339
+Reference = C-RegB1;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFECA
+Path = /562E706B
+Reference = C-RegA1;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFED6
+Path = /562E6A1C
+Reference = D-Reg1;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFEDC
+Path = /562E8067
+Reference = D-Scot1;
+ValeurCmp = D_Schottky;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFF0A
+Path = /562E58BB
+Reference = IC-Reg1;
+ValeurCmp = LM2596S-5v;
+IdModule  = TO_SOT_Packages_SMD:TO-263-5Lead;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFF2E
+Path = /562E23E1
+Reference = IC1;
+ValeurCmp = ATMEGA8A-A;
+IdModule  = Housings_QFP:TQFP-32_7x7mm_Pitch0.8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFF34
+Path = /562E7F64
+Reference = L-Reg1;
+ValeurCmp = INDUCTOR;
+IdModule  = Inductors:INDUCTOR_V;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFF44
+Path = /562DC83E
+Reference = R-RST1;
+ValeurCmp = 4k7;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 562DFF4C
+Path = /562DC52E
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = switch-omron:switch-omron-B3F-10XX;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E01BD
+Path = /562E9A0B
+Reference = UART1;
+ValeurCmp = CONN_01X04;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x04;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E01B5
+Path = /562E6760
+Reference = ASP1;
+ValeurCmp = CONN_01X06;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x06;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E0CB7
+Path = /562F0A1F
+Reference = C-RegB2;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E0CBD
+Path = /562F0A01
+Reference = D-Reg2;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E0CC3
+Path = /562F0A19
+Reference = D-Scot2;
+ValeurCmp = D_Schottky;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E0CCD
+Path = /562F09FB
+Reference = IC-Reg2;
+ValeurCmp = LM2596S-5v;
+IdModule  = TO_SOT_Packages_SMD:TO-263-5Lead;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E0E83
+Path = /562F0A13
+Reference = L-Reg2;
+ValeurCmp = INDUCTOR;
+IdModule  = Inductors:INDUCTOR_V;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E114A
+Path = /562F29B7
+Reference = C-RegA3;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1150
+Path = /562F29C9
+Reference = C-RegB3;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1156
+Path = /562F29AB
+Reference = D-Reg3;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E115C
+Path = /562F29C3
+Reference = D-Scot3;
+ValeurCmp = D_Schottky;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1166
+Path = /562F29A5
+Reference = IC-Reg3;
+ValeurCmp = LM2596S-12v;
+IdModule  = TO_SOT_Packages_SMD:TO-263-5Lead;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E116C
+Path = /562F29BD
+Reference = L-Reg3;
+ValeurCmp = INDUCTOR;
+IdModule  = Inductors:INDUCTOR_V;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E13D4
+Path = /562F898F
+Reference = C-RegA4;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E13DA
+Path = /562F89A1
+Reference = C-RegB4;
+ValeurCmp = CP;
+IdModule  = Capacitors_ThroughHole:C_Radial_D5_L6_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E13E0
+Path = /562F8983
+Reference = D-Reg4;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E13E6
+Path = /562F899B
+Reference = D-Scot4;
+ValeurCmp = D_Schottky;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E13F0
+Path = /562F897D
+Reference = IC-Reg4;
+ValeurCmp = LM2596S-Adj;
+IdModule  = TO_SOT_Packages_SMD:TO-263-5Lead;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E13F6
+Path = /562F8995
+Reference = L-Reg4;
+ValeurCmp = INDUCTOR;
+IdModule  = Inductors:INDUCTOR_V;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1894
+Path = /562FA6E3
+Reference = BATT1;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E189A
+Path = /562FA9D5
+Reference = BATT2;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E18A0
+Path = /562FAB46
+Reference = BATT3;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E18A6
+Path = /562FABE4
+Reference = BATT4;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1C44
+Path = /563116E0
+Reference = D-VCC1;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1C4A
+Path = /56312FE1
+Reference = DZ-VCC1;
+ValeurCmp = 4v9;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1C50
+Path = /56314C63
+Reference = P-VCC1;
+ValeurCmp = CONN_01X02;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1F37
+Path = /56317C4C
+Reference = D-USB1;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E1F3D
+Path = /56317E49
+Reference = DZ-USB1;
+ValeurCmp = 4v9;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E271C
+Path = /5631F482
+Reference = D-LAMP1;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562E2C8E
+Path = /5632431C
+Reference = D-V12;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 562FE0DF
+Path = /562F140E
+Reference = R-CONN1;
+ValeurCmp = 4k7;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 562FE217
+Path = /5630438B
+Reference = R-CONN3;
+ValeurCmp = 4k7;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 56309BBB
+Path = /563026C0
+Reference = R-CONN2;
+ValeurCmp = 4k7;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 56361391
+Path = /563616F4
+Reference = C-PVS1;
+ValeurCmp = C;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 56361397
+Path = /56361379
+Reference = R-PVS1;
+ValeurCmp = R;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5636139D
+Path = /56361448
+Reference = R-PVS2;
+ValeurCmp = R;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 563620BD
+Path = /56379C77
+Reference = D-ADC-USB1;
+ValeurCmp = D;
+IdModule  = Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = 5636BD37
+Path = 
+Reference = REF**;
+ValeurCmp = Symbol_HighVoltage_Type2_CopperTop_VerySmall;
+IdModule  = Symbols:Symbol_HighVoltage_Type2_CopperTop_VerySmall;
+EndCmp
+
+BeginCmp
+TimeStamp = 5636CF5B
+Path = 
+Reference = REF**;
+ValeurCmp = Symbol_OSHW-Logo_CopperTop;
+IdModule  = Symbols:Symbol_OSHW-Logo_CopperTop;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639D481
+Path = /563A5BBF
+Reference = PIN-LAMP1;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639D487
+Path = /563A48A9
+Reference = PIN-PV1;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639DBDB
+Path = /562DDE8A
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639DBE1
+Path = /562DDA78
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639DBE7
+Path = /562DDE2A
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639DBED
+Path = /562DDE49
+Reference = D4;
+ValeurCmp = LED;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639DBF3
+Path = /562DDE69
+Reference = D5;
+ValeurCmp = LED;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 5639DBF9
+Path = /562DE9B8
+Reference = D6;
+ValeurCmp = LED;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = 563A297A
+Path = /563A4946
+Reference = PIN-USB1;
+ValeurCmp = M02PTH4;
+IdModule  = SparkFun:SparkFun-1X02_XTRA_BIG;
+EndCmp
+
+EndListe
