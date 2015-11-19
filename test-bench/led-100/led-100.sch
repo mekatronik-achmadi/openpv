@@ -116,7 +116,7 @@ U 1 1 564D39C0
 P 2650 2050
 F 0 "P1" H 2650 2350 50  0000 C CNN
 F 1 "CONN_02X05" H 2650 1750 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" H 2650 850 60  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x05" H 2650 850 60  0001 C CNN
 F 3 "" H 2650 850 60  0000 C CNN
 	1    2650 2050
 	1    0    0    -1  

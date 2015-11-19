@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/achmadi/development/Projects/openpv/test-bench/mainboard/mainboard.sch)
-    (date "Thu 19 Nov 2015 10:49:30 AM WIB")
+    (date "Thu 19 Nov 2015 11:58:30 AM WIB")
     (tool "Eeschema (2015-10-16 BZR 6271, Git 9aba2f2)-product")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -17,7 +17,7 @@
   (components
     (comp (ref IC1)
       (value ATMEGA128-A)
-      (footprint Housings_QFP:TQFP-64_14x14mm_Pitch0.8mm)
+      (footprint Housings_QFP:LQFP-64_14x14mm_Pitch0.8mm)
       (libsource (lib atmel) (part ATMEGA128-A))
       (sheetpath (names /) (tstamps /))
       (tstamp 564BCB5A))
