@@ -1,0 +1,17 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"IC1";"TQFP-64_14x14mm_Pitch0.8mm";1;"ATMEGA128-A";;;
+2;"C-RTC1,C-RTC2";"C_Disc_D3_P2.5";2;"22pf";;;
+3;"C1";"C_Radial_D5_L6_P2.5";1;"CP";;;
+4;"CON1";"JACK_ALIM";1;"BARREL_JACK";;;
+5;"D-RTC1,D-RTC2,D3";"Diode_DO-35_SOD27_Horizontal_RM10";3;"D";;;
+6;"D1,D2";"LED-3MM";2;"LED";;;
+7;"D4";"Diode_DO-35_SOD27_Horizontal_RM10";1;"D_Schottky";;;
+8;"IC2";"TO-263-5Lead";1;"LM2596S";;;
+9;"L1";"INDUCTOR_V";1;"INDUCTOR";;;
+10;"P-PROG1";"Pin_Header_Straight_1x06";1;"CONN_01X06";;;
+11;"P-RTC-BATT1";"Pin_Header_Straight_1x02";1;"CONN_01X02";;;
+12;"P-RTC1,P-SERIAL1,P-SERIAL2";"Pin_Header_Straight_1x04";3;"CONN_01X04";;;
+13;"PL1,PL2,PL3,PL4,PL5,PL6,PL7,PL8";"Pin_Header_Straight_2x05";8;"CONN_02X05";;;
+14;"R-RST1,R-RTC1,R-RTC2,R1,R2";"Resistor_Horizontal_RM10mm";5;"R";;;
+15;"U1";"SOIC-8_3.9x4.9mm_Pitch1.27mm";1;"PCF8563";;;
+16;"Y1";"Crystal_Watch";1;"Crystal_Small";;;
