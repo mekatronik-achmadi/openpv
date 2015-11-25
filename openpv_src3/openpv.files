@@ -1,0 +1,11 @@
+main.c
+inklusi.h
+comp_uart.h
+comp_uart.c
+comp_adc.h
+comp_adc.c
+Makefile
+comp_led.h
+comp_led.c
+comp_control.h
+comp_control.c

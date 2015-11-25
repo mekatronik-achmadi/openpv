@@ -1,14 +1,12 @@
 EESchema Schematic File Version 2
 LIBS:power
 LIBS:conn
-LIBS:dp_devices
 LIBS:device
-LIBS:linear2
 LIBS:atmel
 LIBS:logo
 LIBS:SparkFun
 LIBS:test3-cache
-EELAYER 25 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
