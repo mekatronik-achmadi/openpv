@@ -1,0 +1,23 @@
+1. Ada jumper terlalu dekat ke chip CPU
+2. Kurang diode zener (harus ada)
+3. kurang diode untuk vdd  (harus ada)
+4. induktor ganti ke non-smd
+5. ada jumper terlalu dekat kaki elco
+6. Low Current Sensing
+	6.1 Op-Amp salah paket (gagal)
+	6.2 Langsung selisih ADC
+	6.3 Resistor low side 100 ohm (gagal)
+	6.4 Ganti berbasis Hall MLX91206
+	6.5 Ganti berbasis Hall ACS712 5A
+	6.6 Remove (also LED_IN dan LED_OUT)
+7. Algoritma Charge-Discharge
+8. PV Buck diganti adjustable (V-In 14v s/d 15v)
+9. ADC per titik bateray
+10. Contact Detector untuk USB dan Lampu
+10. low power Regulator 5v dan STM32 diganti ATMega8
+11. Diode Buck PV to Baterai, Buck VCC to USB, Buck Lamp to LED
+12. Adj PV Buck Max (Feedback to GND)
+13. VDD jumper untuk Blind Charging safety
+14. PV normal connect, VCC & LAMP normal diconnect
+15. Tersedia 2 pilihan tombol Reset atau I/O
+16. Flexibilitas jumlah seri bateray (max 4 soket)
