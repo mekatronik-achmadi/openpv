@@ -1,0 +1,10 @@
+1. gabungkan jadi satu (OK)
+2. pin tombol reset (OK)
+3. buang diode out for USB and LAMP (OK)
+4. output detect pakai diode scottky (OK)
+5. output detect otomatis tanpa reset
+6. zener atmega 5v1 dan USB 5v6 (OK)
+7. lubang vias tanpa masking dan sedikit tambah luas (OK)
+8. mount/screw holes (OK)
+9. led indicator resistor (OK)
+
