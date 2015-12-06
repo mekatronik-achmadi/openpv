@@ -1,4 +1,4 @@
-update=Thu 19 Nov 2015 10:07:57 AM WIB
+update=Sun 06 Dec 2015 02:01:05 PM WIB
 version=1
 last_client=kicad
 [pcbnew]
@@ -58,4 +58,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=library/45xx
+LibName30=/usr/share/kicad/eagle-lbr-imported/eagle/lib/45xx
+LibName31=/usr/share/kicad/eagle-lbr-imported/eagle/lib/national-semiconductor
