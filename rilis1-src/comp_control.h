@@ -5,6 +5,12 @@
 #define CON_LED 0 //B
 #define CON_PV  1 //B
 
+#define CON_1 3 //B
+#define CON_2 4 //B
+#define CON_3 5 //B
+
+#define CON_OFF 1 //B
+
 void control_init(void);
 
 void PV_on(void);
@@ -23,6 +29,8 @@ void USB_off(void);
 void USB_toggle(void);
 void USB_con(unsigned int f_batt_cat, unsigned int f_USB_stt);
 void USB_keep(unsigned int f_batt_cat, unsigned int f_USB_stt);
+
+void Chip_Sleep(unsigned int f_LED_stt, unsigned int f_USB_stt, unsigned int f_waitsleep,unsigned int f_n_waitsleep);
 
 #endif // COMP_CONTROL_H
 

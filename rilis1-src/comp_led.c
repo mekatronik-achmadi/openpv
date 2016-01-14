@@ -53,6 +53,14 @@ void led_BATT_level(unsigned int f_batt_cat){
     }
 }
 
+void led_BATT_on(void){
+
+    PORTB|=(1<<L1);
+    PORTB|=(1<<L2);
+    PORTD|=(1<<L3);
+    PORTD|=(1<<L4);
+}
+
 void led_BATT_off(void){
 
     PORTB&=~(1<<L1);

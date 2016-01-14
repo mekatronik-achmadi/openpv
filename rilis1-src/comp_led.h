@@ -20,8 +20,10 @@ void led_OUT_off(void);
 void led_OUT_toggle(void);
 
 void led_BATT_level(unsigned int f_batt_cat);
+void led_BATT_on(void);
 void led_BATT_off(void);
 void led_BATT_toggle(void);
 
 #endif // COMP_LED_H
+
 

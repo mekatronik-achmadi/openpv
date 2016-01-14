@@ -1,0 +1,6 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"AFF3,AFF1,AFF2";"7SegmentLED_LTS6760_LTS6780";3;"LTS-6980HR";;;
+2;"U3,U1,U2";"DIP-4_W7.62mm";3;"PC817";;;
+3;"P1";"Pin_Header_Straight_2x08";1;"CONN_02X08";;;
+4;"R1,R2,R3";"Resistor_Horizontal_RM10mm";3;"330";;;
+5;"REF**,REF**,REF**,REF**";"MountingHole_2-5mm";4;"MountingHole_2-5mm";;;

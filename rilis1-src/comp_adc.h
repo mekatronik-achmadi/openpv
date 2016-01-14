@@ -13,7 +13,7 @@
 /*
  * AVCC = 4.9v
  * R1 = 10k
- * R2 = 22k
+ * R2 = 33k
  * ADCmax = 1023
  *
  * ADCin = (ADCmax/AVCC)*Vin
@@ -26,11 +26,11 @@
  *
  */
 
-#define BATT_5 993
-#define BATT_4 961
-#define BATT_3 928
-#define BATT_2 896
-#define BATT_1 863
+#define BATT_5 720
+#define BATT_4 700
+#define BATT_3 679
+#define BATT_2 658
+#define BATT_1 638
 
 void ADC_init(void);
 unsigned int ADC_read(unsigned char f_pin);
