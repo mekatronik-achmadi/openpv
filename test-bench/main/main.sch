@@ -105,9 +105,9 @@ RST
 Text Label 1150 900  0    60   ~ 0
 RST
 Text Label 1750 3650 0    60   ~ 0
-MISO
-Text Label 1750 3750 0    60   ~ 0
 MOSI
+Text Label 1750 3750 0    60   ~ 0
+MISO
 Text Label 4650 1950 0    60   ~ 0
 SCK
 $Comp
@@ -423,9 +423,9 @@ TX
 Text Label 1150 1000 0    60   ~ 0
 SCK
 Text Label 1150 1100 0    60   ~ 0
-MOSI
-Text Label 1150 1200 0    60   ~ 0
 MISO
+Text Label 1150 1200 0    60   ~ 0
+MOSI
 $Comp
 L LM2596S_TO263-5 U2
 U 1 1 5663DD45
