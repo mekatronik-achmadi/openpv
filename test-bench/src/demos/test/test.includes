@@ -1,0 +1,8 @@
+.
+/usr/avr/include/
+/usr/avr/include/avr/
+/usr/avr/include/util/
+/usr/avr/include/compat/
+../../os/hal/include
+../../os/kernel/include
+../../os/various
