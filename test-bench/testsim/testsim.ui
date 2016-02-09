@@ -152,6 +152,9 @@
      <property name="text">
       <string>Open</string>
      </property>
+     <property name="shortcut">
+      <string>Ctrl+O</string>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
@@ -310,6 +313,9 @@
      </property>
      <property name="text">
       <string>Send</string>
+     </property>
+     <property name="shortcut">
+      <string>Ctrl+S</string>
      </property>
     </widget>
    </widget>
