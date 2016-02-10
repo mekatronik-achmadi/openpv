@@ -57,6 +57,7 @@ void testsim::on_btnOpen_clicked()
             my_port->close();
         }
         ui->btnOpen->setText("Open");
+        ui->btnSend->setEnabled(false);
     }
 }
 
