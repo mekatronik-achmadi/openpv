@@ -1,6 +1,11 @@
 #include "avr_inc.h"
 
-volatile char data[n_data+1]="000";
+volatile char data[n_data+1];
+
+volatile uint8_t vD1_A,vD1_B,vD1_C;
+volatile uint8_t vD2_A,vD2_B,vD2_C;
+volatile uint8_t vD3_A,vD3_B,vD3_C;
+volatile uint8_t vD4_A,vD4_B,vD4_C;
 volatile uint8_t vD5_A,vD5_B,vD5_C;
 
 extern volatile uint8_t refresh;
@@ -64,10 +69,26 @@ ISR(USART1_RX_vect){
     }
     else{
         
-        vD5_A=Comm_AtoI(data[0]);
-        vD5_B=Comm_AtoI(data[1]);
-        vD5_C=Comm_AtoI(data[2]);
-    
+        vD1_A=Comm_AtoI(data[0]);
+        vD1_B=Comm_AtoI(data[1]);
+        vD1_C=Comm_AtoI(data[2]);
+        
+        vD2_A=Comm_AtoI(data[3]);
+        vD2_B=Comm_AtoI(data[4]);
+        vD2_C=Comm_AtoI(data[5]);
+        
+        vD3_A=Comm_AtoI(data[6]);
+        vD3_B=Comm_AtoI(data[7]);
+        vD3_C=Comm_AtoI(data[8]);
+        
+        vD4_A=Comm_AtoI(data[9]);
+        vD4_B=Comm_AtoI(data[10]);
+        vD4_C=Comm_AtoI(data[11]);
+        
+        vD5_A=Comm_AtoI(data[12]);
+        vD5_B=Comm_AtoI(data[13]);
+        vD5_C=Comm_AtoI(data[14]);
+
     }
     
     refresh=0;

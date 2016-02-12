@@ -171,7 +171,7 @@
     </property>
     <widget class="QLineEdit" name="txtData_1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -180,6 +180,9 @@
        <width>71</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>000</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="chkData_1">
@@ -194,6 +197,9 @@
      <property name="text">
       <string>Data 1</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QCheckBox" name="chkData_2">
      <property name="geometry">
@@ -207,10 +213,13 @@
      <property name="text">
       <string>Data 2</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="txtData_2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -219,6 +228,9 @@
        <width>71</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>000</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="chkData_3">
@@ -233,10 +245,13 @@
      <property name="text">
       <string>Data 3</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="txtData_3">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -245,6 +260,9 @@
        <width>71</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>000</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="chkData_4">
@@ -259,10 +277,13 @@
      <property name="text">
       <string>Data 4</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="txtData_4">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -271,6 +292,9 @@
        <width>71</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>000</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="chkData_5">
@@ -285,10 +309,13 @@
      <property name="text">
       <string>Data 5</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="txtData_5">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -297,6 +324,9 @@
        <width>71</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="text">
+      <string>000</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btnSend">

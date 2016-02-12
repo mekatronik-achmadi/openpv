@@ -1,10 +1,18 @@
 #include "avr_inc.h"
 
+extern volatile uint8_t vD1_A,vD1_B,vD1_C;
+extern volatile uint8_t vD2_A,vD2_B,vD2_C;
+extern volatile uint8_t vD3_A,vD3_B,vD3_C;
+extern volatile uint8_t vD4_A,vD4_B,vD4_C;
 extern volatile uint8_t vD5_A,vD5_B,vD5_C;
 
 volatile uint8_t refresh;
 
 void Disp_Init(void){
+    
+    //LED
+    D_R_LED |= (1<< R_LED);
+    P_R_LED |= (1<< R_LED);
 
     //DATA 7 SEGMENT
     D_ID |= (1<< IA);
@@ -13,6 +21,22 @@ void Disp_Init(void){
     D_ID |= (1<< ID);
 
     //CONTROL 7 SEGMENT
+    D_D1_A |= (1<< D1_A);
+    D_D1_B |= (1<< D1_B);
+    D_D1_C |= (1<< D1_C);
+    
+    D_D2_A |= (1<< D2_A);
+    D_D2_B |= (1<< D2_B);
+    D_D2_C |= (1<< D2_C);
+    
+    D_D3_A |= (1<< D3_A);
+    D_D3_B |= (1<< D3_B);
+    D_D3_C |= (1<< D3_C);
+    
+    D_D4_A |= (1<< D4_A);
+    D_D4_B |= (1<< D4_B);
+    D_D4_C |= (1<< D4_C);
+    
     D_D5_A |= (1<< D5_A);
     D_D5_B |= (1<< D5_B);
     D_D5_C |= (1<< D5_C);
@@ -53,6 +77,22 @@ static void Disp_View(volatile uint8_t *port, uint8_t pin, uint16_t val){
 }
 
 void Disp_Off(void){
+    P_D1_A |= (1 << D1_A );
+    P_D1_B |= (1 << D1_B );
+    P_D1_C |= (1 << D1_C );
+    
+    P_D2_A |= (1 << D2_A );
+    P_D2_B |= (1 << D2_B );
+    P_D2_C |= (1 << D2_C );
+    
+    P_D3_A |= (1 << D3_A );
+    P_D3_B |= (1 << D3_B );
+    P_D3_C |= (1 << D3_C );
+    
+    P_D4_A |= (1 << D4_A );
+    P_D4_B |= (1 << D4_B );
+    P_D4_C |= (1 << D4_C );
+    
     P_D5_A |= (1 << D5_A );
     P_D5_B |= (1 << D5_B );
     P_D5_C |= (1 << D5_C );
@@ -60,8 +100,26 @@ void Disp_Off(void){
 
 void Disp_All(void){
     
+    Disp_View(&P_D1_A,D1_A,vD1_A);
+    Disp_View(&P_D1_B,D1_B,vD1_B);
+    Disp_View(&P_D1_C,D1_C,vD1_C);
+    
+    Disp_View(&P_D2_A,D2_A,vD2_A);
+    Disp_View(&P_D2_B,D2_B,vD2_B);
+    Disp_View(&P_D2_C,D2_C,vD2_C);
+    
+    Disp_View(&P_D3_A,D3_A,vD3_A);
+    Disp_View(&P_D3_B,D3_B,vD3_B);
+    Disp_View(&P_D3_C,D3_C,vD3_C);
+    
+    Disp_View(&P_D4_A,D4_A,vD4_A);
+    Disp_View(&P_D4_B,D4_B,vD4_B);
+    Disp_View(&P_D4_C,D4_C,vD4_C);
+    
     Disp_View(&P_D5_A,D5_A,vD5_A);
     Disp_View(&P_D5_B,D5_B,vD5_B);
     Disp_View(&P_D5_C,D5_C,vD5_C);
+    
+    P_R_LED ^= (1 << R_LED);
     
 }

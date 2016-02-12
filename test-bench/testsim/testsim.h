@@ -5,7 +5,7 @@
 #include <QMessageBox>
 #include <QtSerialPort/QSerialPort>
 
-#define n_data 3
+#define n_data 15
 
 namespace Ui {
 class testsim;

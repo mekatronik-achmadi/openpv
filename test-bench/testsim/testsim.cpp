@@ -69,26 +69,26 @@ void testsim::on_chkData_1_clicked()
 
 void testsim::on_chkData_2_clicked()
 {
-//    if(ui->chkData_2->isChecked()){ui->txtData_2->setEnabled(true);}
-//    else{ui->txtData_2->setEnabled(false);}
+    if(ui->chkData_2->isChecked()){ui->txtData_2->setEnabled(true);}
+    else{ui->txtData_2->setEnabled(false);}
 }
 
 void testsim::on_chkData_3_clicked()
 {
-//    if(ui->chkData_3->isChecked()){ui->txtData_3->setEnabled(true);}
-//    else{ui->txtData_3->setEnabled(false);}
+    if(ui->chkData_3->isChecked()){ui->txtData_3->setEnabled(true);}
+    else{ui->txtData_3->setEnabled(false);}
 }
 
 void testsim::on_chkData_4_clicked()
 {
-//    if(ui->chkData_4->isChecked()){ui->txtData_4->setEnabled(true);}
-//    else{ui->txtData_4->setEnabled(false);}
+    if(ui->chkData_4->isChecked()){ui->txtData_4->setEnabled(true);}
+    else{ui->txtData_4->setEnabled(false);}
 }
 
 void testsim::on_chkData_5_clicked()
 {
-//    if(ui->chkData_5->isChecked()){ui->txtData_5->setEnabled(true);}
-//    else{ui->txtData_5->setEnabled(false);}
+    if(ui->chkData_5->isChecked()){ui->txtData_5->setEnabled(true);}
+    else{ui->txtData_5->setEnabled(false);}
 }
 
 void testsim::on_btnSend_clicked()
