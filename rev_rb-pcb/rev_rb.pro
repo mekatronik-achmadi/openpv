@@ -1,4 +1,4 @@
-update=Wed 17 Feb 2016 01:03:29 PM WIB
+update=Mon 22 Feb 2016 03:56:05 PM WIB
 version=1
 last_client=kicad
 [pcbnew]
@@ -63,3 +63,5 @@ LibName31=/usr/share/kicad/eagle-lbr-imported/eagle/lib/linear
 LibName32=/home/achmadi/development/Projects/openpv/jack-audio/audio-jack
 LibName33=/usr/share/kicad/eagle-lbr-imported/eagle/lib/switch-omron
 LibName34=/usr/share/kicad/eagle-lbr-imported/eagle/lib/testpad
+LibName35=/usr/share/kicad/eagle-lbr-imported/eagle/lib/v-reg-micrel
+LibName36=/usr/share/kicad/eagle-lbr-imported/eagle/lib/v-reg
