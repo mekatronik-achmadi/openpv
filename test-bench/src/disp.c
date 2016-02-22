@@ -1,6 +1,6 @@
 #include "avr_inc.h"
 
-extern volatile uint8_t vD1_A,vD1_B,vD1_C;
+extern volatile uint8_t vD1_A,vD1_B,vD1_C,vD1_D;
 extern volatile uint8_t vD2_A,vD2_B,vD2_C;
 extern volatile uint8_t vD3_A,vD3_B,vD3_C;
 extern volatile uint8_t vD4_A,vD4_B,vD4_C;
@@ -24,6 +24,7 @@ void Disp_Init(void){
     D_D1_A |= (1<< D1_A);
     D_D1_B |= (1<< D1_B);
     D_D1_C |= (1<< D1_C);
+    D_D1_D |= (1<< D1_D);
     
     D_D2_A |= (1<< D2_A);
     D_D2_B |= (1<< D2_B);
@@ -76,10 +77,34 @@ static void Disp_View(volatile uint8_t *port, uint8_t pin, uint16_t val){
     Disp_Off();
 }
 
+void Disp_On(void){
+    P_D1_A &= ~(1 << D1_A );
+    P_D1_B &= ~(1 << D1_B );
+    P_D1_C &= ~(1 << D1_C );
+    P_D1_D &= ~(1 << D1_D );
+    
+    P_D2_A &= ~(1 << D2_A );
+    P_D2_B &= ~(1 << D2_B );
+    P_D2_C &= ~(1 << D2_C );
+    
+    P_D3_A &= ~(1 << D3_A );
+    P_D3_B &= ~(1 << D3_B );
+    P_D3_C &= ~(1 << D3_C );
+    
+    P_D4_A &= ~(1 << D4_A );
+    P_D4_B &= ~(1 << D4_B );
+    P_D4_C &= ~(1 << D4_C );
+    
+    P_D5_A &= ~(1 << D5_A );
+    P_D5_B &= ~(1 << D5_B );
+    P_D5_C &= ~(1 << D5_C );
+}
+
 void Disp_Off(void){
     P_D1_A |= (1 << D1_A );
     P_D1_B |= (1 << D1_B );
     P_D1_C |= (1 << D1_C );
+    P_D1_D |= (1 << D1_D );
     
     P_D2_A |= (1 << D2_A );
     P_D2_B |= (1 << D2_B );
@@ -103,6 +128,7 @@ void Disp_All(void){
     Disp_View(&P_D1_A,D1_A,vD1_A);
     Disp_View(&P_D1_B,D1_B,vD1_B);
     Disp_View(&P_D1_C,D1_C,vD1_C);
+    Disp_View(&P_D1_D,D1_D,vD1_D);
     
     Disp_View(&P_D2_A,D2_A,vD2_A);
     Disp_View(&P_D2_B,D2_B,vD2_B);

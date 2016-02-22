@@ -3,7 +3,7 @@
 
 #define BAUD 9600
  
-#define n_data 15
+#define n_data 16
 
 void Comm_Init(void);
 uint16_t Comm_AtoI(char strdata);
