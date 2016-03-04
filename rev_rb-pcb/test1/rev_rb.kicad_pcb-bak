@@ -1997,7 +1997,7 @@
       (net 7 GND))
     (model Buttons_Switches_ThroughHole.3dshapes/SW_PUSH-12mm.wrl
       (at (xyz 0 0 0))
-      (scale (xyz 2.5 2.5 2.5))
+      (scale (xyz 3 3 3))
       (rotate (xyz 0 0 0))
     )
   )
