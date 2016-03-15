@@ -1647,4 +1647,8 @@ F 3 "" H 3300 5650 60  0000 C CNN
 	1    3300 5650
 	0    1    1    0   
 $EndComp
+Text Label 4950 2100 0    60   ~ 0
+TX
+Text Label 4900 2200 0    60   ~ 0
+RX
 $EndSCHEMATC
