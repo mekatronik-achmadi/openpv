@@ -33,8 +33,19 @@ int main(void) {
     GPIO_Init(GPIOB, &GPIO_InitStructure);
     GPIOB->ODR &= ~(coba_pin);
 
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+    PWR_WakeUpPinCmd(ENABLE);
+
+    int i=0;
+
     while (true){
+        i++;
         GPIOB->ODR ^= (coba_pin);
         chThdSleepMilliseconds(500);
+        if(i==10){
+            i=0;
+            GPIOB->ODR &= ~(coba_pin);
+            PWR_EnterSTANDBYMode();
+        }
     }
 }

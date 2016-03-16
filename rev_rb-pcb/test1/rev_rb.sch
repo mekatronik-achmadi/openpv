@@ -369,7 +369,7 @@ $EndComp
 Text Label 4850 4200 0    60   ~ 0
 CON-USB
 Text Label 4900 1700 0    60   ~ 0
-IND-PV
+ADC-BATT1
 $Comp
 L GND #PWR013
 U 1 1 56C447C4
@@ -1355,7 +1355,7 @@ Wire Wire Line
 Text Label 6550 1500 0    60   ~ 0
 IND-PV
 Text Label 4900 1200 0    60   ~ 0
-ADC-BATT1
+IND-PV
 $Comp
 L R R5
 U 1 1 56CED0CD

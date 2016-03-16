@@ -52,25 +52,25 @@
 #define STM32F10X_MD
 #endif
 
-#define VAL_GPIOACRL            0x88888888      /*  PA7...PA0 */
-#define VAL_GPIOACRH            0x88888888      /* PA15...PA8 */
-#define VAL_GPIOAODR            0xFFFFFFFF
+#define VAL_GPIOACRL            0x00000000      /*  PA7...PA0 */
+#define VAL_GPIOACRH            0x00000000      /* PA15...PA8 */
+#define VAL_GPIOAODR            0x00000000
 
-#define VAL_GPIOBCRL            0x88888888      /*  PB7...PB0 */
-#define VAL_GPIOBCRH            0x88888888      /* PB15...PB8 */
-#define VAL_GPIOBODR            0xFFFFFFFF
+#define VAL_GPIOBCRL            0x00000000      /*  PB7...PB0 */
+#define VAL_GPIOBCRH            0x00000000      /* PB15...PB8 */
+#define VAL_GPIOBODR            0x00000000
 
-#define VAL_GPIOCCRL            0x88888888      /*  PC7...PC0 */
-#define VAL_GPIOCCRH            0x88888888      /* PC15...PC8 */
-#define VAL_GPIOCODR            0xFFFFFFFF
+#define VAL_GPIOCCRL            0x00000000      /*  PC7...PC0 */
+#define VAL_GPIOCCRH            0x00000000      /* PC15...PC8 */
+#define VAL_GPIOCODR            0x00000000
 
-#define VAL_GPIODCRL            0x88888888     /*  PD7...PD0 */
-#define VAL_GPIODCRH            0x88888888      /* PD15...PD8 */
-#define VAL_GPIODODR            0xFFFFFFFF
+#define VAL_GPIODCRL            0x00000000     /*  PD7...PD0 */
+#define VAL_GPIODCRH            0x00000000      /* PD15...PD8 */
+#define VAL_GPIODODR            0x00000000
 
-#define VAL_GPIOECRL            0x88888888      /*  PE7...PE0 */
-#define VAL_GPIOECRH            0x88888888      /* PE15...PE8 */
-#define VAL_GPIOEODR            0xFFFFFFFF
+#define VAL_GPIOECRL            0x00000000      /*  PE7...PE0 */
+#define VAL_GPIOECRH            0x00000000      /* PE15...PE8 */
+#define VAL_GPIOEODR            0x00000000
 
 /*
  * USB bus activation macro, required by the USB driver.
