@@ -1351,9 +1351,7 @@ $EndComp
 Wire Wire Line
 	6650 1300 6600 1300
 Wire Wire Line
-	6650 1500 6550 1500
-Text Label 6550 1500 0    60   ~ 0
-IND-PV
+	6350 1500 6650 1500
 Text Label 4900 1200 0    60   ~ 0
 IND-PV
 $Comp
@@ -1651,4 +1649,31 @@ Text Label 4950 2100 0    60   ~ 0
 TX
 Text Label 4900 2200 0    60   ~ 0
 RX
+$Comp
+L R R?
+U 1 1 56F3DD46
+P 6450 1650
+F 0 "R?" V 6530 1650 50  0000 C CNN
+F 1 "4k7" V 6450 1650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 6380 1650 50  0001 C CNN
+F 3 "" H 6450 1650 50  0000 C CNN
+	1    6450 1650
+	1    0    0    -1  
+$EndComp
+Connection ~ 6450 1500
+Text Label 6350 1500 0    60   ~ 0
+IND-PV
+$Comp
+L GND #PWR?
+U 1 1 56F3F6FF
+P 6450 1850
+F 0 "#PWR?" H 6450 1600 50  0001 C CNN
+F 1 "GND" H 6450 1700 50  0000 C CNN
+F 2 "" H 6450 1850 50  0000 C CNN
+F 3 "" H 6450 1850 50  0000 C CNN
+	1    6450 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 1800 6450 1850
 $EndSCHEMATC

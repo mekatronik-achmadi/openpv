@@ -87,6 +87,7 @@
 extern "C" {
 #endif
   void boardInit(void);
+  void Delay(__IO uint32_t nCount);
 #ifdef __cplusplus
 }
 #endif

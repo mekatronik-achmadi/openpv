@@ -49,3 +49,7 @@ void boardInit(void) {
     //disable SWJ (JTAG) so PB3, PB4, PA13, PA14, PA15 can used as GPIO
     AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_DISABLE;
 }
+
+void Delay(__IO uint32_t nCount){
+  for(; nCount != 0; nCount--);
+}
