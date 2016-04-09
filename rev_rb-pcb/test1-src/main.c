@@ -1,8 +1,4 @@
-#include "ch.h"
-#include "hal.h"
-
 #include "stm32f10x_conf.h"
-#include "board.h"
 
 #define wkup_pin GPIO_Pin_0
 #define coba_pin GPIO_Pin_9
@@ -10,11 +6,11 @@
 #define con_lamp_pin GPIO_Pin_12
 #define con_pv_pin GPIO_Pin_14
 
+void Delay(__IO uint32_t nCount);
 void test_init(void);
 void run_test(__IO uint32_t tunda);
 void nvic_init(void);
 void exti_init(void);
-void timer_init(void);
 void rtc_init(void);
 void alarm_init(void);
 
@@ -22,9 +18,14 @@ int main(void) {
 
     test_init();
     nvic_init();
-    timer_init();
+    exti_init();
+    rtc_init();
 
-    run_test(0xFFFFF);
+    run_test(0xAFFF);
+
+    alarm_init();
+
+    run_test(0xAFFF);
 
     while (1){
     };
@@ -33,6 +34,10 @@ int main(void) {
 /*
  * Function references
  */
+
+void Delay(__IO uint32_t nCount){
+  for(; nCount != 0; nCount--);
+}
 
 void test_init(void){
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -122,9 +127,9 @@ void nvic_init(void){
     NVIC_InitTypeDef NVIC_InitStructure;
 
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
-    NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel = RTCAlarm_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 }
@@ -183,46 +188,16 @@ void run_test(__IO uint32_t tunda){
     Delay(tunda);
 }
 
-void timer_init(void){
+void RTCAlarm_IRQHandler(void)
+{
+  if(RTC_GetITStatus(RTC_IT_ALR) != RESET)
+  {
+    EXTI_ClearITPendingBit(EXTI_Line17);
 
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+    run_test(0xAFF);
 
-    TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-
-    TIM_TimeBaseStructure.TIM_Period = 0xFFFF;
-    TIM_TimeBaseStructure.TIM_Prescaler = 19;
-    TIM_TimeBaseStructure.TIM_ClockDivision = 0;
-    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIM_TimeBaseInit(TIM4, & TIM_TimeBaseStructure);
-
-    TIM_ARRPreloadConfig(TIM4, ENABLE);
-    TIM_UpdateRequestConfig(TIM4, TIM_UpdateSource_Regular);
-
-    TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);
-    TIM_Cmd(TIM4, ENABLE);
+    RTC_WaitForLastTask();
+    RTC_ClearITPendingBit(RTC_IT_ALR);
+    RTC_WaitForLastTask();
+  }
 }
-
-/*
- * Interrupt handler functions
- */
-
-void TIM4_IRQHandler(void){
-    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET){
-
-        run_test(0xAFFF);
-
-        TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-    }
-}
-
-
-CH_IRQ_HANDLER(STM32_TIM4_HANDLER){
-    CH_IRQ_PROLOGUE();
-    chSysLockFromISR();
-
-    run_test(0xAFFF);
-
-    chSysUnlockFromISR();
-    CH_IRQ_EPILOGUE();
-}
-

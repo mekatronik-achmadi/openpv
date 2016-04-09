@@ -88,35 +88,18 @@ PROJECT = ublik
 # Imported source files and paths
 #CHIBIOS = ../../..
 CHIBIOS = /opt/chibios/ChibiOS_3.0.5
-# Startup files.
-include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/startup_stm32f1xx.mk
-# HAL-OSAL files (optional).
-include $(CHIBIOS)/os/hal/hal.mk
-include $(CHIBIOS)/os/hal/ports/STM32/STM32F1xx/platform.mk
-include $(CHIBIOS)/os/hal/osal/rt/osal.mk
-# RTOS files (optional).
-include $(CHIBIOS)/os/rt/rt.mk
-include $(CHIBIOS)/os/rt/ports/ARMCMx/compilers/GCC/mk/port_v7m.mk
-# Other files (optional).
-STDPERIPH = /opt/stm32_stdperiph/STM32F10x_StdPeriph_Lib_V3.5.0
+STDLIB = /opt/stm32_stdperiph/STM32F10x_StdPeriph_Lib_V3.5.0
 include stdperiph.mk
-include ./board/board.mk
+include stdcore.mk
 
 # Define linker script file here
-LDSCRIPT= $(STARTUPLD)/STM32F103xB.ld
+LDSCRIPT= $(STDCORELD)
 
 STDPERIPHDEF = -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
-CSRC = $(STARTUPSRC) \
-       $(KERNSRC) \
-       $(PORTSRC) \
-       $(OSALSRC) \
-       $(HALSRC) \
-       $(PLATFORMSRC) \
-       $(BOARDSRC) \
-       $(TESTSRC) \
+CSRC = $(STDCORESRC) \
        $(STDPERIPHSRC) \
        main.c
 
@@ -145,12 +128,9 @@ TCSRC =
 TCPPSRC =
 
 # List ASM source files here
-ASMSRC = $(STARTUPASM) $(PORTASM) $(OSALASM)
+ASMSRC = $(STDCOREASM)
 
-INCDIR = $(STARTUPINC) $(KERNINC) $(PORTINC) $(OSALINC) \
-         $(HALINC) $(PLATFORMINC) $(BOARDINC) $(TESTINC) \
-         $(STDPERIPHINC) \
-         $(CHIBIOS)/os/various
+INCDIR = $(STDPERIPHINC) $(STDCOREINC)
 
 #
 # Project, sources and paths
@@ -186,7 +166,7 @@ AOPT =
 TOPT = -mthumb -DTHUMB
 
 # Define C warning options here
-CWARN = -Wall -Wextra -Wundef -Wstrict-prototypes
+CWARN = -Wall -Wextra -Wundef
 
 # Define C++ warning options here
 CPPWARN = -Wall -Wextra -Wundef
