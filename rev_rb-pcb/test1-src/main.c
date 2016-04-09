@@ -1,3 +1,6 @@
+#include "ch.h"
+#include "hal.h"
+
 #include "stm32f10x_conf.h"
 #include "board.h"
 
@@ -212,12 +215,14 @@ void TIM4_IRQHandler(void){
     }
 }
 
-/*
-CH_IRQ_HANDLER(STM32_TIM2_HANDLER){
+
+CH_IRQ_HANDLER(STM32_TIM4_HANDLER){
     CH_IRQ_PROLOGUE();
     chSysLockFromISR();
+
+    run_test(0xAFFF);
 
     chSysUnlockFromISR();
     CH_IRQ_EPILOGUE();
 }
-*/
+
