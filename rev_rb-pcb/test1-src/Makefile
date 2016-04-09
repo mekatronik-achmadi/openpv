@@ -83,7 +83,7 @@ endif
 #
 
 # Define project name here
-PROJECT = ch
+PROJECT = ublik
 
 # Imported source files and paths
 #CHIBIOS = ../../..
@@ -93,16 +93,14 @@ include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/startup_stm32f1xx.mk
 # HAL-OSAL files (optional).
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/hal/ports/STM32/STM32F1xx/platform.mk
-#include $(CHIBIOS)/os/hal/boards/ST_NUCLEO_F103RB/board.mk
-include ./board/board.mk
 include $(CHIBIOS)/os/hal/osal/rt/osal.mk
 # RTOS files (optional).
 include $(CHIBIOS)/os/rt/rt.mk
 include $(CHIBIOS)/os/rt/ports/ARMCMx/compilers/GCC/mk/port_v7m.mk
 # Other files (optional).
-#include $(CHIBIOS)/test/rt/test.mk
 STDPERIPH = /opt/stm32_stdperiph/STM32F10x_StdPeriph_Lib_V3.5.0
 include stdperiph.mk
+include ./board/board.mk
 
 # Define linker script file here
 LDSCRIPT= $(STARTUPLD)/STM32F103xB.ld
