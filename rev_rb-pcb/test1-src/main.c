@@ -7,28 +7,50 @@
 #define con_pv_pin GPIO_Pin_14
 
 void Delay(__IO uint32_t nCount);
-void test_init(void);
-void run_test(__IO uint32_t tunda);
+
+void pin_init(void);
 void nvic_init(void);
 void exti_init(void);
 void rtc_init(void);
+void led_test(__IO uint32_t tunda);
 void alarm_init(void);
+void standby_init(void);
+void stop_init(void);
 
 int main(void) {
 
-    test_init();
+    pin_init();
     nvic_init();
     exti_init();
     rtc_init();
 
-    run_test(0xAFFF);
-
-    alarm_init();
-
-    run_test(0xAFFF);
+    led_test(0xAFFFF);
 
     while (1){
+        stop_init();
+        Delay(0xAFFFF);
     };
+}
+
+void RTCAlarm_IRQHandler(void)
+{
+  if(RTC_GetITStatus(RTC_IT_ALR) != RESET)
+  {
+
+    led_test(0xAFFFF);
+
+    if(PWR_GetFlagStatus(PWR_FLAG_WU) != RESET)
+    {
+      PWR_ClearFlag(PWR_FLAG_WU);
+    }
+
+    RTC_ClearITPendingBit(RTC_IT_ALR);
+    RTC_WaitForLastTask();
+
+    EXTI_ClearITPendingBit(EXTI_Line17);
+
+    RTC_SetCounter(0);
+  }
 }
 
 /*
@@ -39,7 +61,7 @@ void Delay(__IO uint32_t nCount){
   for(; nCount != 0; nCount--);
 }
 
-void test_init(void){
+void pin_init(void){
     GPIO_InitTypeDef GPIO_InitStructure;
 
     AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_DISABLE;
@@ -75,7 +97,15 @@ void test_init(void){
     */
 }
 
-/*
+void led_test(__IO uint32_t tunda){
+
+    GPIOB->ODR |= (coba_pin);
+    Delay(tunda);
+
+    GPIOB->ODR &= ~(coba_pin);
+    Delay(tunda);
+}
+
 void standby_init(void){
 
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |RCC_APB2Periph_GPIOE, ENABLE);
@@ -98,30 +128,10 @@ void standby_init(void){
     PWR_EnterSTANDBYMode();
 }
 
-void stop_entry(void){
-
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |RCC_APB2Periph_GPIOE, ENABLE);
-
-    GPIO_InitTypeDef GPIO_InitStructure;
-
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
-    GPIO_Init(GPIOB, &GPIO_InitStructure);
-    GPIO_Init(GPIOC, &GPIO_InitStructure);
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
-    GPIO_Init(GPIOE, &GPIO_InitStructure);
-
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |RCC_APB2Periph_GPIOE, DISABLE);
-
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
-    PWR_WakeUpPinCmd(ENABLE);
-
-    RTC_SetAlarm(RTC_GetCounter()+ 3);
-
+void stop_init(void){
+    alarm_init();
     PWR_EnterSTOPMode(PWR_Regulator_LowPower,PWR_STOPEntry_WFI);
 }
-*/
 
 void nvic_init(void){
     NVIC_InitTypeDef NVIC_InitStructure;
@@ -168,36 +178,11 @@ void rtc_init(void){
 
 void alarm_init(void){
 
-    Delay(1500);
-
     RTC_ClearFlag(RTC_FLAG_SEC);
     while(RTC_GetFlagStatus(RTC_FLAG_SEC) == RESET);
 
+    RTC_WaitForLastTask();
+
     RTC_SetAlarm(RTC_GetCounter()+ 3);
     RTC_WaitForLastTask();
-
-    run_test(0xAFFFF);
-}
-
-void run_test(__IO uint32_t tunda){
-
-    GPIOB->ODR |= (coba_pin);
-    Delay(tunda);
-
-    GPIOB->ODR &= ~(coba_pin);
-    Delay(tunda);
-}
-
-void RTCAlarm_IRQHandler(void)
-{
-  if(RTC_GetITStatus(RTC_IT_ALR) != RESET)
-  {
-    EXTI_ClearITPendingBit(EXTI_Line17);
-
-    run_test(0xAFF);
-
-    RTC_WaitForLastTask();
-    RTC_ClearITPendingBit(RTC_IT_ALR);
-    RTC_WaitForLastTask();
-  }
 }
