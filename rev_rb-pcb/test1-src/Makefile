@@ -49,26 +49,6 @@ ifeq ($(USE_SMART_BUILD),)
   USE_SMART_BUILD = yes
 endif
 
-#
-# Build global options
-##############################################################################
-
-##############################################################################
-# Architecture or project specific options
-#
-
-# Stack size to be allocated to the Cortex-M process stack. This stack is
-# the stack used by the main() thread.
-ifeq ($(USE_PROCESS_STACKSIZE),)
-  USE_PROCESS_STACKSIZE = 0x400
-endif
-
-# Stack size to the allocated to the Cortex-M main/exceptions stack. This
-# stack is used for processing interrupts and exceptions.
-ifeq ($(USE_EXCEPTIONS_STACKSIZE),)
-  USE_EXCEPTIONS_STACKSIZE = 0x400
-endif
-
 # Enables the use of FPU on Cortex-M4 (no, softfp, hard).
 ifeq ($(USE_FPU),)
   USE_FPU = no
@@ -86,16 +66,16 @@ endif
 PROJECT = ublik
 
 # Imported source files and paths
-#CHIBIOS = ../../..
-CHIBIOS = /opt/chibios/ChibiOS_3.0.5
 STDLIB = /opt/stm32_stdperiph/STM32F10x_StdPeriph_Lib_V3.5.0
-include stdperiph.mk
-include stdcore.mk
+STDMAKEFILE = $(STDLIB)/../stm32lib-makefile/STM32F10x
+include $(STDMAKEFILE)/stdcore.mk
+include $(STDMAKEFILE)/stdperiph.mk
+
+# Define chip macro here
+STDCHIPDEF = STM32F10X_MD
 
 # Define linker script file here
 LDSCRIPT= $(STDCORELD)
-
-STDPERIPHDEF = -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -171,6 +151,9 @@ CWARN = -Wall -Wextra -Wundef
 # Define C++ warning options here
 CPPWARN = -Wall -Wextra -Wundef
 
+# Build-spesific options here
+STDLIBDEF = -D$(STDCHIPDEF) -DUSE_STDPERIPH_DRIVER
+
 #
 # Compiler settings
 ##############################################################################
@@ -180,7 +163,7 @@ CPPWARN = -Wall -Wextra -Wundef
 #
 
 # List all user C define here, like -D_DEBUG=1
-UDEFS = $(STDPERIPHDEF)
+UDEFS =
 
 # Define ASM defines here
 UADEFS =
@@ -198,5 +181,4 @@ ULIBS =
 # End of user defines
 ##############################################################################
 
-RULESPATH = $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC
-include $(RULESPATH)/rules.mk
+include $(STDMAKEFILE)/rules.mk
