@@ -17,4 +17,6 @@ void pin_init(void);
 
 void led_test(__IO uint32_t tunda);
 
+uint8_t pv_check(void);
+
 #endif // PIN_H

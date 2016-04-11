@@ -36,7 +36,7 @@ void RTCAlarm_IRQHandler(void)
   if(RTC_GetITStatus(RTC_IT_ALR) != RESET)
   {
 
-    led_test(0xAFFFF);
+    led_test(ntunda_wkup);
 
     if(PWR_GetFlagStatus(PWR_FLAG_WU) != RESET)
     {

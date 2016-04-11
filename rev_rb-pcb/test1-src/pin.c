@@ -19,14 +19,14 @@ void con_pin_init(void){
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
-    GPIOB->ODR |= (con_pv_pin);
+    GPIOB->ODR &= ~(con_pv_pin);
 
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
     GPIO_InitStructure.GPIO_Pin = con_lamp_pin;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
-    GPIOB->ODR |= (con_lamp_pin);
+    GPIOB->ODR &= ~(con_lamp_pin);
 }
 
 void wkup_pin_init(void){
@@ -37,6 +37,7 @@ void wkup_pin_init(void){
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
+    GPIOA->ODR &= ~(wkup_pin);
 }
 
 void pin_init(void){
@@ -54,4 +55,17 @@ void led_test(__IO uint32_t tunda){
 
     GPIOB->ODR &= ~(led_pv_pin);
     Delay(tunda);
+}
+
+uint8_t pv_check(void){
+    uint8_t result;
+
+    if(!(GPIOA->IDR & (1<<wkup_pin))){
+        result=0;
+    }
+    else{
+        result=1;
+    }
+
+    return result;
 }
