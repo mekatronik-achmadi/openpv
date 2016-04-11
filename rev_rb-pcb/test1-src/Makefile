@@ -81,7 +81,11 @@ LDSCRIPT= $(STDCORELD)
 # setting.
 CSRC = $(STDCORESRC) \
        $(STDPERIPHSRC) \
-       main.c
+       main.c \
+       interup.c \
+       pin.c \
+       rtc.c \
+       saver.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
