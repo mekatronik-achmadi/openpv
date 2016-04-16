@@ -9,7 +9,7 @@ int main(void) {
     Delay(ntunda);
 
     while (1){
-        printf("coba \n");
+//        printf("coba \n");
         led_test(0xAFFF);
         Delay(0xAFFFF);
     };
