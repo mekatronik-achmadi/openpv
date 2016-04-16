@@ -13,6 +13,13 @@ void nvic_init(void){
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
+
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
 }
 
 void exti_init(void){
@@ -49,5 +56,13 @@ void RTCAlarm_IRQHandler(void)
     EXTI_ClearITPendingBit(EXTI_Line17);
 
     RTC_SetCounter(0);
+  }
+}
+
+void USART1_IRQHandler (void)
+{
+  if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
+  {
+      USART_ClearITPendingBit(USART1, USART_IT_RXNE);
   }
 }

@@ -29,7 +29,7 @@ void con_pin_init(void){
     GPIOB->ODR &= ~(con_lamp_pin);
 }
 
-void wkup_pin_init(void){
+void chk_pin_init(void){
     GPIO_InitTypeDef GPIO_InitStructure;
 
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
@@ -38,6 +38,13 @@ void wkup_pin_init(void){
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
     GPIOA->ODR &= ~(wkup_pin);
+
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO, ENABLE);
+    GPIO_InitStructure.GPIO_Pin = chk_lamp_pin;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+    GPIO_Init(GPIOA,&GPIO_InitStructure);
+
 }
 
 void pin_init(void){
@@ -45,7 +52,7 @@ void pin_init(void){
 
     led_pin_init();
     con_pin_init();
-    wkup_pin_init();
+    chk_pin_init();
 }
 
 void led_test(__IO uint32_t tunda){

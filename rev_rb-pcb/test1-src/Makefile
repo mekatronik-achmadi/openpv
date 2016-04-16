@@ -40,7 +40,7 @@ endif
 
 # Enable this if you want to see the full log while compiling.
 ifeq ($(USE_VERBOSE_COMPILE),)
-  USE_VERBOSE_COMPILE = no
+  USE_VERBOSE_COMPILE = yes
 endif
 
 # If enabled, this option makes the build process faster by not compiling
@@ -75,7 +75,11 @@ include $(STDMAKEFILE)/stdperiph.mk
 STDCHIPDEF = STM32F10X_MD
 
 # Define linker script file here
-LDSCRIPT= $(STDCORELD)
+#LDSCRIPT= $(STDCORELD)
+LDSCRIPT= ./stm32_flash.ld
+#LDSCRIPT= ./STM32F103xB.ld
+
+STDASM = $(STDLIB)/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/gcc_ride7/startup_stm32f10x_md.s
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -85,7 +89,9 @@ CSRC = $(STDCORESRC) \
        interup.c \
        pin.c \
        rtc.c \
-       saver.c
+       adc.c \
+       saver.c \
+       uart.c \
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -112,7 +118,8 @@ TCSRC =
 TCPPSRC =
 
 # List ASM source files here
-ASMSRC = $(STDCOREASM)
+#ASMSRC = $(STDCOREASM)
+ASMSRC = $(STDASM)
 
 INCDIR = $(STDPERIPHINC) $(STDCOREINC)
 

@@ -7,5 +7,7 @@
 #include "interup.h"
 #include "rtc.h"
 #include "saver.h"
+#include "adc.h"
+#include "uart.h"
 
 #endif // INKLUSI_H
