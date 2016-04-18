@@ -11,7 +11,10 @@
 #define CR_DS_MASK              ((uint32_t)0xFFFFFFFC)
 #define PWR_Regulator_LowPower  ((uint32_t)0x00000001)
 
+#define PWR_FLAG_WU             ((uint32_t)0x00000001)
+
 void wkup_pin_set(FunctionalState NewState);
+void pwr_flag_clear(uint32_t PWR_FLAG);
 
 void saver_init(void);
 void standby_init(void);

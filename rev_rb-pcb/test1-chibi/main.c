@@ -12,7 +12,9 @@ int main(void) {
     Delay(0xAFFFF);
 
     while (true){
-        alarm_init();
+
+        sleep_init();
+
         Delay(0xAFFFF);
         led_test(0xAFFFF);
         Delay(0xAFFFF);
