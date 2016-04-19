@@ -1,6 +1,6 @@
 #include "inklusi.h"
 
-void Delay(__IO uint32_t nCount){
+void delay(__IO uint32_t nCount){
   for(; nCount != 0; nCount--);
 }
 
@@ -13,7 +13,7 @@ void con_pin_init(void){
     palSetPadMode(GPIOB, con_pv_pin, PAL_MODE_OUTPUT_PUSHPULL);
 }
 
-void chk_pin_init(void){
+void chk_pv_pin_init(void){
     palSetPadMode(GPIOA, wkup_pin, PAL_MODE_INPUT_PULLDOWN);
 }
 
@@ -21,28 +21,35 @@ void pin_init(void){
     AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_DISABLE;
 
     led_pin_init();
-    chk_pin_init();
     con_pin_init();
+    chk_pv_pin_init();
+}
+
+void pin_deinit(void){
+    palSetPadMode(GPIOB, led_pv_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, con_lamp_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, con_pv_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOA, wkup_pin, PAL_MODE_RESET);
 }
 
 void led_test(__IO uint32_t tunda){
     palSetPad(GPIOB,led_pv_pin);
-    Delay(tunda);
+    delay(tunda);
 
     palClearPad(GPIOB,led_pv_pin);
-    Delay(tunda);
+    delay(tunda);
 }
 
 void blink_test(void){
     led_test(0xAFFF);
-    Delay(0xAFFFF);
+    delay(0xAFFFF);
     led_test(0xAFFF);
-    Delay(0xAFFFF);
+    delay(0xAFFFF);
     led_test(0xAFFF);
-    Delay(0xAFFFF);
+    delay(0xAFFFF);
 }
 
-uint8_t pv_check(void){
+uint8_t chk_pv(void){
     uint8_t result;
 
     if(!palReadPad(GPIOA, wkup_pin)){

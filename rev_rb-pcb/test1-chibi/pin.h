@@ -13,16 +13,18 @@
 
 #define led_pv_pin 9 //B
 
-void Delay(__IO uint32_t nCount);
+void delay(__IO uint32_t nCount);
 
 void led_pin_init(void);
 void con_pin_init(void);
-void chk_pin_init(void);
+void chk_pv_pin_init(void);
+
 void pin_init(void);
+void pin_deinit(void);
 
 void led_test(__IO uint32_t tunda);
 void blink_test(void);
 
-uint8_t pv_check(void);
+uint8_t chk_pv(void);
 
 #endif // PIN_H

@@ -1,7 +1,7 @@
 #ifndef SAVER_H
 #define SAVER_H
 
-#define RTC_ALARMPERIOD 3
+#define RTC_ALARMPERIOD 5
 
 #define PWR_OFFSET      (PWR_BASE - PERIPH_BASE)
 #define CSR_OFFSET      (PWR_OFFSET + 0x04)

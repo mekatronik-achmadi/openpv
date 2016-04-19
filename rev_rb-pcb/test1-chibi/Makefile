@@ -94,7 +94,7 @@ include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/startup_stm32f1xx.mk
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/hal/ports/STM32/STM32F1xx/platform.mk
 include $(CHIBIOS)/os/hal/osal/rt/osal.mk
-include ./coba-board/board.mk
+include ./board.mk
 # RTOS files (optional).
 include $(CHIBIOS)/os/rt/rt.mk
 include $(CHIBIOS)/os/rt/ports/ARMCMx/compilers/GCC/mk/port_v7m.mk
@@ -121,9 +121,16 @@ CSRC = $(STARTUPSRC) \
        $(TESTSRC) \
        $(STDPERIPHSRC) \
        $(CHIBIOS)/os/various/syscalls.c \
+       $(CHIBIOS)/os/various/evtimer.c \
+       $(CHIBIOS)/os/various/shell.c \
+       $(CHIBIOS)/os/hal/lib/streams/chprintf.c \
+       $(CHIBIOS)/os/hal/lib/streams/memstreams.c \
+       $(CHIBIOS)/os/hal/lib/streams/nullstreams.c \
        main.c \
        pin.c \
-       saver.c
+       saver.c \
+       comms.c \
+       analog.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.

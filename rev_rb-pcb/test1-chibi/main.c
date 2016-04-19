@@ -1,23 +1,26 @@
 #include "inklusi.h"
 
-int main(void) {
+extern adcsample_t adc_lamp;
 
+void all_init(void){
     halInit();
     chSysInit();
 
     pin_init();
+    comms_init();
+    analog_init();
     saver_init();
 
-    led_test(0xAFFF);
-    Delay(0xAFFFF);
+}
+
+int main(void) {
+
+    all_init();
+
+    blink_test();
 
     while (true){
 
-        sleep_init();
-
-        Delay(0xAFFFF);
-        led_test(0xAFFFF);
-        Delay(0xAFFFF);
     }
     return 0;
 }

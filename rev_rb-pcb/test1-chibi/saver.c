@@ -80,8 +80,6 @@ void alarm_init(void){
 }
 
 void sleep_init(void){
-    alarm_init();
-
     PWR->CR |= (PWR_CR_LPDS | PWR_CR_CSBF | PWR_CR_CWUF);
     PWR->CR &= ~PWR_CR_PDDS;
     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
@@ -95,27 +93,18 @@ void wkup_pin_set(FunctionalState NewState)
 
 void pwr_flag_clear(uint32_t PWR_FLAG)
 {
-  PWR->CR |=  PWR_FLAG << 2;
+    PWR->CR |=  PWR_FLAG << 2;
 }
 
 void standby_init(void){
-
-    if(!palReadPad(GPIOA, wkup_pin)){
-
-        palSetPadMode(GPIOB, led_pv_pin, PAL_MODE_RESET);
-        palSetPadMode(GPIOB, con_lamp_pin, PAL_MODE_RESET);
-        palSetPadMode(GPIOB, con_pv_pin, PAL_MODE_RESET);
-        palSetPadMode(GPIOA, wkup_pin, PAL_MODE_RESET);
-
-        chSysLock();
-        wkup_pin_set(ENABLE);
-        PWR->CR |= PWR_CR_CWUF;
-        PWR->CR |= PWR_CR_CSBF;
-        PWR->CR |= PWR_CR_LPDS;
-        PWR->CR |= PWR_CR_PDDS;
-        SCB->SCR |= SCB_SCR_SLEEPDEEP;
-        __WFI();
-        chSysUnlock();
-    }
+    chSysLock();
+    wkup_pin_set(ENABLE);
+    PWR->CR |= PWR_CR_CWUF;
+    PWR->CR |= PWR_CR_CSBF;
+    PWR->CR |= PWR_CR_LPDS;
+    PWR->CR |= PWR_CR_PDDS;
+    SCB->SCR |= SCB_SCR_SLEEPDEEP;
+    __WFI();
+    chSysUnlock();
 }
 
