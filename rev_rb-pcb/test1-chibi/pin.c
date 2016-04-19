@@ -6,6 +6,12 @@ void delay(__IO uint32_t nCount){
 
 void led_pin_init(void){
     palSetPadMode(GPIOB, led_pv_pin, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, led_lamp_pin, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, led_ind_pin, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, led_batt4_pin, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, led_batt3_pin, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, led_batt2_pin, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, led_batt1_pin, PAL_MODE_OUTPUT_PUSHPULL);
 }
 
 void con_pin_init(void){
@@ -27,26 +33,17 @@ void pin_init(void){
 
 void pin_deinit(void){
     palSetPadMode(GPIOB, led_pv_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, led_lamp_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, led_ind_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, led_batt4_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, led_batt3_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, led_batt2_pin, PAL_MODE_RESET);
+    palSetPadMode(GPIOB, led_batt1_pin, PAL_MODE_RESET);
+
     palSetPadMode(GPIOB, con_lamp_pin, PAL_MODE_RESET);
     palSetPadMode(GPIOB, con_pv_pin, PAL_MODE_RESET);
+
     palSetPadMode(GPIOA, wkup_pin, PAL_MODE_RESET);
-}
-
-void led_test(__IO uint32_t tunda){
-    palSetPad(GPIOB,led_pv_pin);
-    delay(tunda);
-
-    palClearPad(GPIOB,led_pv_pin);
-    delay(tunda);
-}
-
-void blink_test(void){
-    led_test(0xAFFF);
-    delay(0xAFFFF);
-    led_test(0xAFFF);
-    delay(0xAFFFF);
-    led_test(0xAFFF);
-    delay(0xAFFFF);
 }
 
 uint8_t chk_pv(void){

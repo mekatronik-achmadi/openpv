@@ -54,7 +54,7 @@ static void rtc_cb(RTCDriver *rtcp, rtcevent_t event) {
     rtcSTM32SetSec(&RTCD1,0);
     rtcSetCallback(&RTCD1, NULL);
 
-    blink_test();
+    /* your handler routine here */
 
     osalSysLockFromISR();
     chBSemSignalI(&alarm_sem);
